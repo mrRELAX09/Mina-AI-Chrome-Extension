@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mina</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="marked.min.js"></script>
+</head>
+<body>
+    <div class="sidebar-container">
+        <div id="chat-view">
+            <header class="header">
+                <h1 data-i18n-key="appName">Mina</h1>
+                <div class="header-buttons">
+                    <button id="theme-toggle-button" data-i18n-title="titleTheme" title="Temayı Değiştir">
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q52 0 98-27t75-69q-2 12-2 25q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-123 86.5-209.5T660-956q-24-6-49-9t-51-3q-117 0-198.5 81.5T280-680q0 117 81.5 198.5T560-400q11 0 22-1.5t21-4.5q-38 62-97.5 99T480-200Z"/></svg>
+                        <svg class="icon-sun" style="display: none;" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M480-360q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Zm0 80q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280ZM80-440q-17 0-28.5-11.5T40-480q0-17 11.5-28.5T80-520h80q17 0 28.5 11.5T200-480q0 17-11.5 28.5T160-440H80Zm720 0q-17 0-28.5-11.5T760-480q0-17 11.5-28.5T800-520h80q17 0 28.5 11.5T920-480q0 17-11.5 28.5T880-440h-80ZM480-760q-17 0-28.5-11.5T440-800v-80q0-17 11.5-28.5T480-920q17 0 28.5 11.5T520-880v80q0 17-11.5 28.5T480-760Zm0 720q-17 0-28.5-11.5T440-80v-80q0-17 11.5-28.5T480-200q17 0 28.5 11.5T520-160v80q0 17-11.5 28.5T480-40ZM226-678l-57-57q-12-12-11.5-28.5T170-792q12-12 28.5-11.5T227-792l57 57q12 11 11.5 28T284-678q-11 12-28 11.5T226-678Zm494 495-57-57q-12-11-11.5-28t11.5-29q12-11 29-11.5t28 11.5l57 57q12 12 11.5 28.5T732-170q-12 12-28.5 11.5T673-171l-57-57Zm-57-495q-11-12-11.5-28.5T616-792l57-57q11-12 28-11.5t29 11.5q11 12 11.5 28.5T730-678l-57 57q-12 11-28.5 11.5T616-678ZM170-170q-12-12-11.5-28.5T170-227l57-57q11-12 28-11.5t29 11.5q11 12 11.5 28.5T284-214l-57 57q-12 11-28.5 12T170-170Z"/></svg>
+                    </button>
+                    <button id="settings-button" data-i18n-title="titleSettings" title="Ayarlar">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor">
+                            <path d="M440-280q-17 0-28.5-11.5T400-320v-320q0-17 11.5-28.5T440-680h80q17 0 28.5 11.5T560-640v320q0 17-11.5 28.5T520-280h-80Zm280 0q-17 0-28.5-11.5T680-320v-320q0-17 11.5-28.5T720-680h80q17 0 28.5 11.5T840-640v320q0 17-11.5 28.5T800-280h-80Zm-560 0q-17 0-28.5-11.5T120-320v-320q0-17 11.5-28.5T160-680h80q17 0 28.5 11.5T280-640v320q0 17-11.5 28.5T240-280h-80Z"/>
+                        </svg>
+                    </button>
+                    <button id="copy-chat-button" data-i18n-title="titleCopy" title="Sohbeti Kopyala"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M360-240q-22 0-36-14t-14-36v-560q0-22 14-36t36-14h400q22 0 36 14t14 36v560q0 22-14 36t-36 14H360Zm0-80h400v-560H360v560ZM200-80q-22 0-36-14t-14-36v-640h80v640h560v80H200Zm160-720v560-560Z"/></svg></button>
+
+                    <div class="header-toggle-container" data-i18n-title="titleCtrlToggle" title="Ctrl Kısayolunu Aç/Kapat">
+                        <svg class="ctrl-icon" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor"><path d="M320-240v-480h480v480H320Zm80-80h320v-320H400v320Zm-240 0v-480h80v480H160Zm0 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-320Z"/></svg>
+                        <label class="switch small-switch">
+                            <input type="checkbox" id="ctrl-capture-toggle-header">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <button id="new-chat-button" data-i18n-title="titleNewChat" title="Yeni Sohbet"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
+                </div>
+            </header>
+            <div id="chat-container">
+                <div id="welcome-container">
+                    <div class="welcome-icon animate-on-load"><img src="icons/icon128.png" alt="Mina Logo" width="64"></div>
+                    <h2 class="animate-on-load" data-i18n-key="sidebarHello">Merhaba! Ben Mina.</h2>
+                    <button id="summarize-page-button" class="summarize-button animate-on-load">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                        <span data-i18n-key="sidebarSummarizePage">Sayfayı Özetle</span>
+                    </button>
+                    <p class="animate-on-load" data-i18n-key="sidebarOrAsk">veya aşağıya bir soru yazın.</p>
+                </div>
+                <div id="chat-history"></div>
+            </div>
+            <footer class="prompt-container">
+                <div id="quick-actions-container" style="display: none;">
+                    <button id="summarize-page-quick-button" class="quick-action-btn" data-i18n-title="sidebarSummarizePage" title="Sayfayı Özetle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                        <span data-i18n-key="sidebarSummarizePage">Sayfayı Özetle</span>
+                    </button>
+                </div>
+                <div class="model-switcher animate-on-load">
+                    <button class="model-btn" data-model="flash" data-i18n-key="modelFlash" data-i18n-title="modelFlash" title="Flash">Flash</button>
+                    <button class="model-btn" data-model="pro" data-i18n-key="modelPro" data-i18n-title="modelPro" title="Pro">Pro</button>
+                </div>
+                <form id="prompt-form" class="prompt-form-wrapper animate-on-load">
+                    <textarea id="prompt-input" data-i18n-placeholder="promptPlaceholder" placeholder="Mina'ya bir soru sorun..." rows="1"></textarea>
+                    <button id="prompt-button" type="submit" data-i18n-title="titleSubmit" title="Gönder" disabled><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M120-160v-240l320-80-320-80v-240l760 320-760 320Z"/></svg></button>
+                    <button id="stop-button" type="button" data-i18n-title="titleStop" title="Durdur" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M320-320h320v-320H320v320Z"/></svg></button>
+                </form>
+            </footer>
+        </div>
+    </div>
+    <script src="sidebar.js"></script>
+</body>
+</html>
